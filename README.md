@@ -68,12 +68,13 @@ spec:
   repo: git@github.com:RobertoMachorro/fleet-foundation.git
   branch: main
   clientSecretName: gh-ssh-key
+  pollingInterval: 60s
   paths:
-  - infrastructure
+  - infrastructure/longhorn
   - ... paths ...
 ```
 
-**Note:** Replace fleet-foundation and RobertoMachorro/fleet-foundation above with your own name and repository path.
+**Note:** Replace fleet-foundation and RobertoMachorro/fleet-foundation above with your own name and repository path. Also replace the clientSecretName to the one you created in step 2.
 
 6. Check resources:
 ```
@@ -81,7 +82,15 @@ kubectl -n fleet-local get fleet
 kubectl top pod -A --sort-by memory --sum
 ```
 
-7. If you opted for the infrastructure path(s) in this repo, when setup completes, access Rancher at https://-your ip-.sslip.io/dashboard/ , using the password revealed by the command:
+## Installing Rancher
+
+If you opted for the infrastructure/rancher path in this repo, take a couple of extra steps:
+
+1. Configure the IP address and other Rancher options at infrastructure/rancher/fleet.yaml .
+
+2. Commit and let the setup redeploy.
+
+3. When setup completes, access Rancher at https://-your ip-.sslip.io/dashboard/ , using the password revealed by the command:
 ```
 kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{.data.bootstrapPassword|base64decode}}{{ "\n" }}'
 ```
