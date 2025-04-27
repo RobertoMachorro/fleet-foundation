@@ -9,4 +9,5 @@ spec:
   clientSecretName: gh-ssh-key
   pollingInterval: 60s
   paths:
-  - infrastructure
+  - infrastructure/longhorn
+  - infrastructure/rancher

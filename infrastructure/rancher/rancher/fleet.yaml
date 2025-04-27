@@ -8,5 +8,5 @@ helm:
   #failurePolicy: reinstall
   wait: true
   values:
-    #hostname: 192.168.68.124.sslip.io
+    hostname: 192.168.68.124.sslip.io
     replicas: 1

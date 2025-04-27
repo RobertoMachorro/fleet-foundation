@@ -81,6 +81,8 @@ spec:
 6. Check resources:
 ```
 kubectl -n fleet-local get fleet
+```
+```
 kubectl top pod -A --sort-by memory --sum
 ```
 
