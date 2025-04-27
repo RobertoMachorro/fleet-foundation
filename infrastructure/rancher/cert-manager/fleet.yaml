@@ -1,0 +1,11 @@
+defaultNamespace: cert-manager
+helm:
+  releaseName: cert-manager
+  repo: https://charts.jetstack.io
+  chart: cert-manager
+  version: 1.17.0
+  wait: true
+  failOnErr: true
+  values:
+    crds:
+      enabled: true

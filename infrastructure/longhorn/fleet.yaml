@@ -1,0 +1,15 @@
+defaultNamespace: longhorn-system
+helm:
+  releaseName: longhorn
+  repo: https://charts.longhorn.io
+  chart: longhorn
+  version: 1.8.1
+  finalizer: wrangler.cattle.io/on-helm-chart-remove
+  wait: true
+  failOnErr: true
+  values:
+    defaultSettings:
+      defaultReplicaCount: 3
+      #backupTarget: s3://backup-bucket@us-east-1/longhorn-backups
+    persistence:
+      defaultClass: true
