@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     workloadselector: website
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 80
       protocol: TCP
