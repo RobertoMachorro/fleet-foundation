@@ -57,7 +57,9 @@ Then add the public key to your Git repo for authentication. In Github, go to yo
 
 3. Prior to deploying Fleet setups, you should add any Secrets, TLS certs, connection strings, etc. that are required.
 
-4. Time to deploy! Apply a manifest similar to this, select the paths you want to include in your setup:
+4. Review all **fleet.yaml** files to make sure all values and settings are correct. Commit and push changes.
+
+5. Time to deploy! Apply a manifest similar to this, select the paths you want to include in your setup:
 ```yaml
 apiVersion: fleet.cattle.io/v1alpha1
 kind: GitRepo
