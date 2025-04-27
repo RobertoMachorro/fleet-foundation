@@ -11,3 +11,4 @@ spec:
   paths:
   - infrastructure/longhorn
   - infrastructure/rancher
+  - demos/website
