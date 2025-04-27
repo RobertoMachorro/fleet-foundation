@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: website
+spec:
+  selector:
+    matchLabels:
+      workloadselector: website
+  template:
+    metadata:
+      labels:
+        workloadselector: website
+    spec:
+      containers:
+        - name: website
+          image: nginx:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 80
+      restartPolicy: Always
+  replicas: 1
